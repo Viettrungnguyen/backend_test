@@ -10,10 +10,6 @@ class Account extends Model
 {
     use HasFactory, SoftDeletes;
 
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
     protected $primaryKey = 'registerID';
+    protected $fillable = ['login', 'password', 'phone'];
 }
