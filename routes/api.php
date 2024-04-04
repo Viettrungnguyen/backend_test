@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FolderComparisonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/accounts', [AccountController::class, 'store']);
-Route::put('/accounts/{id}', [AccountController::class, 'update']);
-Route::delete('/accounts/{id}', [AccountController::class, 'destroy']);
+Route::post('/accounts/{id}', [AccountController::class, 'update']);
+Route::delete('/accounts', [AccountController::class, 'destroy']);
 Route::get('/accounts/{id}', [AccountController::class, 'show']);
 Route::get('/accounts', [AccountController::class, 'index']);
+Route::get('/compare-folders', [FolderComparisonController::class, 'compareFolders']);

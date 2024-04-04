@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class CreateAccountRequest extends FormRequest
+class CreateAccountRequest extends BaseFormRequest
 {
     public function authorize()
     {
@@ -20,4 +18,3 @@ class CreateAccountRequest extends FormRequest
         ];
     }
 }
-
